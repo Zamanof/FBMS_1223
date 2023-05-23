@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET Intro", "ADO.NET Intro\ADO.NET Intro.csproj", "{818E9F8F-5394-4566-A839-AFC7A64BCBEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO_Entity", "ADO_Entity", "{526E77D4-54BC-4AAF-B4D0-0C0F7EA22B0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson 1", "Lesson 1", "{5559B232-DA00-4651-9D86-65DDD56B5226}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{818E9F8F-5394-4566-A839-AFC7A64BCBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818E9F8F-5394-4566-A839-AFC7A64BCBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818E9F8F-5394-4566-A839-AFC7A64BCBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818E9F8F-5394-4566-A839-AFC7A64BCBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{818E9F8F-5394-4566-A839-AFC7A64BCBEF} = {5559B232-DA00-4651-9D86-65DDD56B5226}
+		{5559B232-DA00-4651-9D86-65DDD56B5226} = {526E77D4-54BC-4AAF-B4D0-0C0F7EA22B0C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {629C69F9-BA71-4C94-B95A-C8B6A1873223}
+	EndGlobalSection
+EndGlobal
