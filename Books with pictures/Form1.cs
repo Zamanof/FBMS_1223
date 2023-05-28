@@ -75,9 +75,11 @@ VALUES(@bookId, @name, @picture)", conn);
             double ratio = Math.Min(ratioX, ratioY);
             int newWidth = (int)(img.Width * ratio); 
             int newHeight = (int)(img.Height * ratio);
+            
             Image mi = new Bitmap(newWidth, newHeight);
+
             Graphics graphics = Graphics.FromImage(mi);
-            graphics.DrawImage(mi, 0 , 0, newWidth, newHeight);
+            graphics.DrawImage(img, 0 , 0, newWidth, newHeight);
             MemoryStream ms = new MemoryStream();
             mi.Save(ms, ImageFormat.Jpeg);
             ms.Flush();
