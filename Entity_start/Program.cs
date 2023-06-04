@@ -142,6 +142,10 @@
 
 #endregion
 
+using Microsoft.EntityFrameworkCore.Storage;
+
+
+
 #region MyRegion
 //using (var db = new StudentContext())
 //{
@@ -152,7 +156,8 @@
 //}
 #endregion
 
+
 void showStudents(List<Student> students)
-{
-    students.ForEach(s => Console.WriteLine(s));
-}
+    {
+        students.ForEach(s => Console.WriteLine(s));
+    }
