@@ -1,6 +1,7 @@
 ﻿using DatabBase_First;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 //using (var db = new LibraryContext())
 //{
@@ -39,22 +40,22 @@ Skip
 ToList()    
  */
 
-//using (var db = new LibraryContext())
-//{
-//    //var authors = db.Authors
-//    //    .Where(a => a.LastName.EndsWith("ov"))
-//    //    .ToList();
-//    //authors.ForEach(a => Console.WriteLine(a));
+using (var db = new LibraryContext(GetOptions("DefaultConnection")))
+{
+    var authors = db.Authors
+        .Where(a => a.LastName.EndsWith("ov"))
+        .ToList();
+    authors.ForEach(a => Console.WriteLine(a));
 
-//    // Regular Expression
+    //Regular Expression
 
-//    //EF.Functions.Like()
+    //EF.Functions.Like()
 
-//    //var authors1 = db.Authors
-//    //    .Where(a => EF.Functions.Like(a.LastName, "%ov"))
-//    //    .ToList();
-//    //authors1.ForEach(a => Console.WriteLine(a));
-//}
+    var authors1 = db.Authors
+        .Where(a => EF.Functions.Like(a.LastName, "%ov"))
+        .ToList();
+    authors1.ForEach(a => Console.WriteLine(a));
+}
 
 
 #region Select
@@ -92,19 +93,35 @@ Authors AS A
 ON A.Id = B.IdAuthor
 */
 
-using (var db = new LibraryContext())
-{
-    var books = db.Books.Join(db.Authors, b => b.IdAuthor, a => a.Id,
-        (b, a)=> new
-        {
-            Name = b.Name,
-            AuthorName=$"{a.FirstName} {a.LastName}"  
-        })
-        .ToList();
-    foreach (var book in books)
-    {
-        Console.WriteLine($"{book.Name} - {book.AuthorName}");
-    }
-}
+//using (var db = new LibraryContext())
+//{
+//    var books = db.Books.Join(db.Authors, b => b.IdAuthor, a => a.Id,
+//        (b, a)=> new
+//        {
+//            Name = b.Name,
+//            AuthorName=$"{a.FirstName} {a.LastName}"  
+//        })
+//        .ToList();
+
+//    foreach (var book in books)
+//    {
+//        Console.WriteLine($"{book.Name} - {book.AuthorName}");
+//    }
+//}
 
 #endregion
+
+
+DbContextOptions<LibraryContext> GetOptions(string configName)
+{
+    var builder = new ConfigurationBuilder();
+    builder.SetBasePath(Directory.GetCurrentDirectory());
+    builder.AddJsonFile("AppConfig.json");
+    var config = builder.Build();
+    string connecionString = config.GetConnectionString(configName)!;
+    DbContextOptionsBuilder<LibraryContext> optionsBuilder
+        = new DbContextOptionsBuilder<LibraryContext>();
+    optionsBuilder.UseSqlServer(connecionString);
+    var options = optionsBuilder.Options;
+    return options;
+}
