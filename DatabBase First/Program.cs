@@ -40,23 +40,28 @@ Skip
 ToList()    
  */
 
+//using (var db = new LibraryContext(GetOptions("DefaultConnection")))
+//{
+//    var authors = db.Authors
+//        .Where(a => a.LastName.EndsWith("ov"))
+//        .ToList();
+//    authors.ForEach(a => Console.WriteLine(a));
+
+//    //Regular Expression
+
+//    //EF.Functions.Like()
+
+//    var authors1 = db.Authors
+//        .Where(a => EF.Functions.Like(a.LastName, "%ov"))
+//        .ToList();
+//    authors1.ForEach(a => Console.WriteLine(a));
+//}
+
 using (var db = new LibraryContext(GetOptions("DefaultConnection")))
 {
-    var authors = db.Authors
-        .Where(a => a.LastName.EndsWith("ov"))
-        .ToList();
-    authors.ForEach(a => Console.WriteLine(a));
-
-    //Regular Expression
-
-    //EF.Functions.Like()
-
-    var authors1 = db.Authors
-        .Where(a => EF.Functions.Like(a.LastName, "%ov"))
-        .ToList();
-    authors1.ForEach(a => Console.WriteLine(a));
+    var authors = db.Authors.Where(x => x.Id > 0).ToList();
+    authors.ForEach(author => Console.WriteLine(author));
 }
-
 
 #region Select
 //using (var db = new LibraryContext())
