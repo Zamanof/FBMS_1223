@@ -29,21 +29,73 @@ namespace Dapper_relationship
             InitializeComponent();
             var cs = @"Server=(localdb)\MSSQLLocalDB;Database=Dapper_relationship;Integrated Security=True;TrustServerCertificate=True;";
             // One to one
-            using (var conn = new SqlConnection(cs))
-            {
-                var sql =
-                    @"SELECT * 
-                      FROM Capitals
-                      INNER JOIN Countries
-                      ON Countries.Id = Capitals.CountryId";
-                var result = conn.Query<Capital, Country, Capital>(sql, 
-                    (capital, country) =>
-                    {
-                        capital.Country = country;
-                        return capital;
-                    });
-                dataGrid.ItemsSource = result;
-            }
+            #region One to one
+
+            //using (var conn = new SqlConnection(cs))
+            //{
+            //    var sql =
+            //        @"SELECT * 
+            //          FROM Capitals
+            //          INNER JOIN Countries
+            //          ON Countries.Id = Capitals.CountryId";
+            //    var result = conn.Query<Capital, Country, Capital>(sql, 
+            //        (capital, country) =>
+            //        {
+            //            capital.Country = country;
+            //            return capital;
+            //        });
+            //    dataGrid.ItemsSource = result;
+            //}
+            #endregion
+
+            // One to many
+            #region One to many
+            //var categories = new List<Category>();
+            //using (var conn = new SqlConnection(cs))
+            //{
+            //    var sql = @"SELECT C.[Id], C.[Name], P.[Id], P.[Name], P.CategoryId
+            //                FROM Categories AS C
+            //                INNER JOIN Products AS P
+            //                ON C.Id = P.CategoryId";
+            //    conn.Query<Category, Product, Category>(sql,
+            //        (category, product) =>
+            //        {
+            //            if (!categories.Exists(c => c.Id == category.Id))
+            //            {
+            //                category.Products.Add(product);
+            //                categories.Add(category);
+            //            }
+            //            else
+            //            {
+            //                categories
+            //                .FirstOrDefault(c => c.Id == category.Id)
+            //                .Products.Add(product);
+            //            }
+            //            return category;
+            //        });
+            //    dataGrid.ItemsSource = categories;
+            //}
+
+
+            //using (var conn = new SqlConnection(cs))
+            //{
+            //    var sql = @"SELECT C.[Id], C.[Name], P.[Id], P.[Name], P.CategoryId
+            //                FROM Categories AS C
+            //                INNER JOIN Products AS P
+            //                ON C.Id = P.CategoryId";
+            //    var result = conn.Query< Category,Product, Product>(sql,
+            //        (category, product) =>
+            //        {
+            //            product.Category = category;
+            //            return product;
+            //        });
+            //    dataGrid.ItemsSource = result;
+            //}
+            #endregion
+
+            // Many to Many
+            
+
         }
     }
 }
