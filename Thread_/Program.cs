@@ -7,10 +7,11 @@ Thread thread1 = new Thread(() =>
 		Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId} - {i} - {Thread.CurrentThread.IsBackground}");
 	}
 });
-thread1.IsBackground = true;
-thread1.Start();
 ParameterizedThreadStart parameterized = Some;
 Thread thread2 = new(Some);
+thread1.IsBackground = true;
+thread2.IsBackground = true;
+thread1.Start();
 thread2.Start();
 for (int i = 0; i < 10; i++)
 {
