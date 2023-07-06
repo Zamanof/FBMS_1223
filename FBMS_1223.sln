@@ -99,7 +99,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPool_", "ThreadPool_\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Interlocked Monitor Lock", "04. Interlocked Monitor Lock", "{75D05DB3-28BA-48F6-BD78-6650D97BB4EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interlocked Monitor Lock", "Interlocked Monitor Lock\Interlocked Monitor Lock.csproj", "{644E9CB8-9081-4D43-8931-98C51C893BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interlocked Monitor Lock", "Interlocked Monitor Lock\Interlocked Monitor Lock.csproj", "{644E9CB8-9081-4D43-8931-98C51C893BEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Mutex, Semaphore, SemaphoreSlim", "05. Mutex, Semaphore, SemaphoreSlim", "{18C3A703-5465-475C-8DD8-8B6B2EC1C4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mutex_Semaphore_SemaphoreSlim", "Mutex_Semaphore_SemaphoreSlim\Mutex_Semaphore_SemaphoreSlim.csproj", "{C3194FFA-1930-49FE-AC85-CB9298A14BCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -235,6 +239,10 @@ Global
 		{644E9CB8-9081-4D43-8931-98C51C893BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{644E9CB8-9081-4D43-8931-98C51C893BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{644E9CB8-9081-4D43-8931-98C51C893BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3194FFA-1930-49FE-AC85-CB9298A14BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3194FFA-1930-49FE-AC85-CB9298A14BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3194FFA-1930-49FE-AC85-CB9298A14BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3194FFA-1930-49FE-AC85-CB9298A14BCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -287,6 +295,8 @@ Global
 		{7D00B839-5388-4CBF-B001-61A67362499E} = {2851B693-62C9-4D7A-BF5B-BA5C93767BBE}
 		{75D05DB3-28BA-48F6-BD78-6650D97BB4EF} = {7744FBF8-69AC-480C-AC51-90C9609C3A89}
 		{644E9CB8-9081-4D43-8931-98C51C893BEE} = {75D05DB3-28BA-48F6-BD78-6650D97BB4EF}
+		{18C3A703-5465-475C-8DD8-8B6B2EC1C4A9} = {7744FBF8-69AC-480C-AC51-90C9609C3A89}
+		{C3194FFA-1930-49FE-AC85-CB9298A14BCE} = {18C3A703-5465-475C-8DD8-8B6B2EC1C4A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {629C69F9-BA71-4C94-B95A-C8B6A1873223}
