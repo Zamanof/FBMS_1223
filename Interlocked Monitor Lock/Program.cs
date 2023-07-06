@@ -111,44 +111,79 @@
 #endregion
 
 #region lock
-Thread[] threads = new Thread[5];
-object obj = new object();
+//Thread[] threads = new Thread[5];
+//object obj = new object();
 
 
-for (int i = 0; i < 5; i++)
+//for (int i = 0; i < 5; i++)
+//{
+//    threads[i] = new Thread(() =>
+//    {
+//        for (int j = 0; j < 1000000; j++)
+//        {
+
+//            lock (obj)
+//            {
+//                Counter.Count++;
+//                if (Counter.Count % 2 != 0)
+//                {
+//                    Counter.CountOdd++;
+//                }
+//            }
+//        }
+//    });
+//}
+//foreach (Thread thread in threads)
+//{
+//    thread.Start();
+//}
+
+////Console.WriteLine($"Main thread without join {Counter.Count}");
+//foreach (Thread thread in threads)
+//{
+//    thread.Join();
+//}
+//Console.WriteLine($"Main thread with join Count = {Counter.Count}");
+//Console.WriteLine($"Main thread with join CountOdd = {Counter.CountOdd}");
+#endregion
+
+#region Deadlock
+object object1 = new();
+var object2 = new object();
+
+Thread thread1 = new Thread(ObvliviousMethod);
+Thread thread2 = new Thread(BlindMethod);
+
+thread1.Start();
+thread2.Start();
+
+void ObvliviousMethod()
 {
-    threads[i] = new Thread(() =>
+    Console.WriteLine("Obvlivious method");
+    lock (object1)
     {
-        for (int j = 0; j < 1000000; j++)
+        Thread.Sleep(1000);
+        lock (object2)
         {
 
-            lock (obj)
-            {
-                Counter.Count++;
-                if (Counter.Count % 2 != 0)
-                {
-                    Counter.CountOdd++;
-                }
-            }
-
-
+        }
+    }
+}
+void BlindMethod()
+{
+    Console.WriteLine("Blind method");
+    lock (object2)
+    {
+        Thread.Sleep(1000);
+        lock (object1)
+        {
 
         }
-    });
-}
-foreach (Thread thread in threads)
-{
-    thread.Start();
+    }
 }
 
-//Console.WriteLine($"Main thread without join {Counter.Count}");
-foreach (Thread thread in threads)
-{
-    thread.Join();
-}
-Console.WriteLine($"Main thread with join Count = {Counter.Count}");
-Console.WriteLine($"Main thread with join CountOdd = {Counter.CountOdd}");
 #endregion
+
 class Counter
 {
     public static int Count = 0;
