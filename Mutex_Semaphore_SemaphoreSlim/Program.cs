@@ -88,25 +88,24 @@
 
 #endregion
 
-
 #region SemaphoreSlim
-SemaphoreSlim semaphoreSlim = new SemaphoreSlim(2);
-for (int i = 0; i < 10; i++)
-{
-    var name = $"Thread - {i}";
-    int seconds = 2 + 2 * i;
-    Thread thread = new Thread(() => {
-        AccessDataBase(name, seconds);
-    });
-    thread.Start();
-}
-void AccessDataBase(string name, int seconds)
-{
-    Console.WriteLine($"{name} wait for access");
-    semaphoreSlim.Wait();
-    Console.WriteLine($"{name} is working {seconds} seconds on database...");
-    Thread.Sleep(seconds * 1000);
-    Console.WriteLine($"{name} is complet works on database...");
-    semaphoreSlim.Release();
-}
+//SemaphoreSlim semaphoreSlim = new SemaphoreSlim(3);
+//for (int i = 0; i < 10; i++)
+//{
+//    var name = $"Thread - {i}";
+//    int seconds = 2 + 2 * i;
+//    Thread thread = new Thread(() => {
+//        AccessDataBase(name, seconds);
+//    });
+//    thread.Start();
+//}
+//void AccessDataBase(string name, int seconds)
+//{
+//    Console.WriteLine($"{name} wait for access");
+//    semaphoreSlim.Wait();
+//    Console.WriteLine($"{name} is working {seconds} seconds on database...");
+//    Thread.Sleep(seconds * 1000);
+//    Console.WriteLine($"{name} is complet works on database...");
+//    semaphoreSlim.Release();
+//}
 #endregion
