@@ -107,11 +107,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mutex_Semaphore_SemaphoreSl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. AutoResetEvent, TPL", "06. AutoResetEvent, TPL", "{3A23E769-CEC2-4094-B228-9267BC790621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancelation_Token", "Cancelation_Token\Cancelation_Token.csproj", "{3AF43845-767F-4B94-9F9A-EB03999C5075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cancelation_Token", "Cancelation_Token\Cancelation_Token.csproj", "{3AF43845-767F-4B94-9F9A-EB03999C5075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResentEvent_", "AutoResentEvent_\AutoResentEvent_.csproj", "{EDE795BC-C740-44C3-A88A-10B26C97DFC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoResentEvent_", "AutoResentEvent_\AutoResentEvent_.csproj", "{EDE795BC-C740-44C3-A88A-10B26C97DFC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPL_Intro", "TPL_Intro\TPL_Intro.csproj", "{41B37DBB-8B4F-4260-9D4E-A1EA00B43859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPL_Intro", "TPL_Intro\TPL_Intro.csproj", "{41B37DBB-8B4F-4260-9D4E-A1EA00B43859}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Continuations", "07. Continuations", "{47656A68-63F2-46B6-BAA2-4C04443363E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Continuations", "Continuations\Continuations.csproj", "{092E6F43-EF33-4607-A8B2-636C1722E16E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -263,6 +267,10 @@ Global
 		{41B37DBB-8B4F-4260-9D4E-A1EA00B43859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41B37DBB-8B4F-4260-9D4E-A1EA00B43859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41B37DBB-8B4F-4260-9D4E-A1EA00B43859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092E6F43-EF33-4607-A8B2-636C1722E16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092E6F43-EF33-4607-A8B2-636C1722E16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092E6F43-EF33-4607-A8B2-636C1722E16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092E6F43-EF33-4607-A8B2-636C1722E16E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -321,6 +329,8 @@ Global
 		{3AF43845-767F-4B94-9F9A-EB03999C5075} = {3A23E769-CEC2-4094-B228-9267BC790621}
 		{EDE795BC-C740-44C3-A88A-10B26C97DFC4} = {3A23E769-CEC2-4094-B228-9267BC790621}
 		{41B37DBB-8B4F-4260-9D4E-A1EA00B43859} = {3A23E769-CEC2-4094-B228-9267BC790621}
+		{47656A68-63F2-46B6-BAA2-4C04443363E8} = {7744FBF8-69AC-480C-AC51-90C9609C3A89}
+		{092E6F43-EF33-4607-A8B2-636C1722E16E} = {47656A68-63F2-46B6-BAA2-4C04443363E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {629C69F9-BA71-4C94-B95A-C8B6A1873223}
