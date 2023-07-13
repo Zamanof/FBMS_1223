@@ -1,0 +1,28 @@
+﻿<Window x:Class="AsyncLove.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncLove"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="3" Grid.Row="0">
+            <Button Content="Simple Download" Margin="5" FontSize="20" Click="SimpleDownlad"/>
+            <Button Content="Don't Click" Margin="5" FontSize="20" Click="DontClick"/>
+            <Button Content="Task Download" Margin="5" FontSize="20" Click="TaskDownload"/>
+        </UniformGrid>
+        <TextBox x:Name="contentTextBox" Grid.Row="1"/>
+        <UniformGrid Columns="3" Grid.Row="2">
+            <Button Content="Task Context" Margin="5" FontSize="20" Click="TaskContext"/>
+            <Button Content="Await" Margin="5" FontSize="20" Click="AwaitDownload"/>
+            <Button Content="Clear" Margin="5" FontSize="20" Click="ClearMethod"/>
+        </UniformGrid>
+
+    </Grid>
+</Window>
