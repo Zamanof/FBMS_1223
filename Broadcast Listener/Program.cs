@@ -11,4 +11,6 @@ while (true)
 {
     var receiveBuffer = listener.Receive(ref from);
     Console.WriteLine(Encoding.Default.GetString(receiveBuffer));
+    Thread.Sleep(40);
+    Console.Clear();
 }
