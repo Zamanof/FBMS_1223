@@ -40,12 +40,17 @@ while (true)
             var processList = JsonSerializer.Deserialize<string[]>(response);
             foreach(var processName in processList)
             {
-                Console.WriteLine($"    {processName}");
-            }
-            Console.ReadLine();
-            Console.Clear();
+                Console.WriteLine($"    {processName}");            }          
+            
+            break;
+            case Command.Run:
+            break;
+        case Command.Kill:
             break;
         default:
             break;
     }
+    Console.WriteLine("Press any key to continue");
+    Console.ReadLine();
+    Console.Clear();
 }
