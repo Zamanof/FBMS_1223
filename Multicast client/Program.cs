@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Text;
 
 var client = new UdpClient();
-var ip = IPAddress.Parse("224.5.6.7");
+var ip = IPAddress.Parse("224.120.126.128");
 client.JoinMulticastGroup(ip);
 var endPoint = new IPEndPoint(ip, 27001);
 
